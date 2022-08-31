@@ -67,21 +67,17 @@ const Navbar = () => {
         <SearchIcon style={{color: 'gray', fontSize: 16}}/>
     </SearchContainer>
     </Left>
-    
     <Center><Logo>Krookly</Logo></Center>
     <Right>
     <MenuItem>REGISTER</MenuItem>
     <MenuItem>SIGN IN</MenuItem>
-    <MenuItem><Badge badgeContent={4} color="primary">
-  <ShoppingCartOutlinedIcon color="action" />
-</Badge></MenuItem>
+    <MenuItem>
+    <ShoppingCartOutlinedIcon/>
+    </MenuItem>
     </Right>
    </Wrapper>
-
    </Container>
-     
-   
   )
 }
 
-export default Navbar
+export default Navbar;

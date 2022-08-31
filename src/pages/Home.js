@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import Navbar from '../Components/Navbar'
 import Announcement from '../Components/Announcement'
 import Slider from '../Components/Slider'
-import CategoryItem from '../Components/CategoryItem'
 import Categories from '../Components/Categories'
+import Products from '../Components/Products'
 
 
 const Home = () => {
@@ -13,8 +13,8 @@ const Home = () => {
       <Announcement/>
      <Navbar/>
      <Slider/>
-    
      <Categories/>
+     <Products/>
     
     </div>
   )
