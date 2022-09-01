@@ -4,11 +4,14 @@ import Navbar from '../Components/Navbar'
 import Announcement from '../Components/Announcement'
 import Footer from '../Components/Footer'
 import { Add, Remove } from '@mui/icons-material'
+import { mobile } from '../responsive';
 
 const Container= styled.div`
+
 `
 const Wrapper= styled.div`
 padding: 20px;
+${mobile({ padding: "10px" })}
 `
 const Title= styled.h1`
 font-weight: 300;
@@ -30,6 +33,7 @@ color:${(props)=>props.type==="filled" && "white"}
 `
 
 const TopTexts= styled.div`
+${mobile({ display: "none" })}
 `
 const TopText= styled.span`
 text-decoration: underline;
@@ -40,6 +44,8 @@ margin:0px 10px;
 const Bottom= styled.div`
 display:flex;
 justify-content:space-between;
+${mobile({ flexDirection: "column" })}
+
 `
 const Info= styled.div`
 flex:3;`
@@ -48,6 +54,7 @@ flex:3;`
 const Product= styled.div`
 display: flex;
 justify-content: space-between;
+ ${mobile({ flexDirection: "column" })}
 `
 const ProductDetail= styled.div`
 flex:2;
@@ -63,6 +70,7 @@ flex-direction: column;
 justify-content:space-around;
 `
 const ProductName= styled.span`
+font-weight:400;
 `
 const ProductId= styled.div`
 `
@@ -88,10 +96,12 @@ margin-bottom: 20px;
 const ProductAmount= styled.div`
 font-size: 24px;
 margin: 5px;
+  ${mobile({ margin: "5px 15px" })}
 `
 const ProductPrice= styled.div`
 font-size: 30px;
 font-weight: 200;
+${mobile({ marginBottom: "20px" })}
 `
 const Hr= styled.hr`
   background-color: #eee;
@@ -150,10 +160,10 @@ const Cart = () => {
                      <ProductDetail>
                         <Image src="https://i.ibb.co/HGLymKw/faith-yarn-Wr0-Tp-Kqf26s-unsplash.jpg" />
                         <Details>
-                            <ProductName><b>Product:</b>Cotton Shirt</ProductName>
-                            <ProductId><b>ID:</b>7332565810</ProductId>
+                            <ProductName><b>Product: </b>Cotton Shirt</ProductName>
+                            <ProductId><b>ID: </b>7332565810</ProductId>
                             <ProductColor color="black" />
-                            <ProductSize><b>Size:</b>42</ProductSize>
+                            <ProductSize><b>Size: </b>42</ProductSize>
                         </Details>
                      </ProductDetail>
                      <PriceDetail>
@@ -170,10 +180,10 @@ const Cart = () => {
                      <ProductDetail>
                         <Image src="https://i.ibb.co/yVwcBq9/adrian-regeci-1-MNdt-CBub-w-unsplash.jpg" />
                         <Details>
-                            <ProductName><b>Product:</b>Apple Watch</ProductName>
-                            <ProductId><b>ID:</b>7332565855</ProductId>
+                            <ProductName><b>Product: </b>Apple Watch</ProductName>
+                            <ProductId><b>ID: </b>7332565855</ProductId>
                             <ProductColor color="black" />
-                            <ProductSize><b>Size:</b>S</ProductSize>
+                            <ProductSize><b>Size: </b>S</ProductSize>
                         </Details>
                      </ProductDetail>
                      <PriceDetail>

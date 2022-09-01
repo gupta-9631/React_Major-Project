@@ -4,20 +4,17 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import RoomIcon from '@mui/icons-material/Room';
 import PhoneIcon from '@mui/icons-material/Phone';
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
+import { mobile } from '../responsive';
 
 import styled from 'styled-components'
 
 const Logo = styled.h1`
-
 `
-
 const Description = styled.p`
 margin-top: 20px 0px;
 `
-
 const SocialContainer= styled.div`
 display: flex;
-
 `
 const SocialIcon= styled.div`
 width: 40px;
@@ -30,11 +27,10 @@ align-items: center;
 justify-content: center;
 margin-top: 10px;
 margin-right: 20px;
-
 `
 const Container= styled.div`
   display: flex;
- 
+  ${mobile({ flexDirection: "column" })}
 `
 const Left= styled.div`
 flex:1;
@@ -44,13 +40,14 @@ padding: 20px;
 `
 const Center= styled.div`
 flex:1;
-padding: 20px;`
-
+padding: 20px;
+${mobile({ display: "none" })}
+`
 const Right= styled.div`
  flex:1;
  margin-bottom:20px;
+ ${mobile({ backgroundColor: "#fff8f8" })}
  `
-
  const Title= styled.h3`
  margin-bottom:30px;
  `
@@ -74,10 +71,6 @@ align-items: center;
 const Payment= styled.img`
 width: 50%;
 `
-
-
-
-
 const Footer = () => {
   return (
 
@@ -108,9 +101,9 @@ const Footer = () => {
             <List>
                 <ListItem>Home</ListItem>
                 <ListItem>Cart</ListItem>
-                <ListItem>Man Fashion</ListItem>
+                <ListItem>Men Fashion</ListItem>
                 <ListItem>Woman Fashion</ListItem>
-                <ListItem>Accesories</ListItem>
+                <ListItem>Accessories</ListItem>
                 <ListItem>My Account</ListItem>
                 <ListItem>Order Tracking</ListItem>
                 <ListItem>Wishlist</ListItem>
