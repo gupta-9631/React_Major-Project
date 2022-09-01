@@ -20,7 +20,7 @@ const Left = styled.div`
 flex: 1;
 display: flex;
 align-items: center;
-`
+`;
 const Center = styled.div`
 flex: 1;
 text-align: center;
