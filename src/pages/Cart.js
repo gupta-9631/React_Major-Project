@@ -5,6 +5,7 @@ import Announcement from '../Components/Announcement'
 import Footer from '../Components/Footer'
 import { Add, Remove } from '@mui/icons-material'
 import { mobile } from '../responsive';
+import { Link } from 'react-router-dom'
 
 const Container= styled.div`
 
@@ -147,7 +148,7 @@ const Cart = () => {
         <Wrapper>
             <Title>YOUR BAG</Title>
             <Top>
-                <TopButton>CONTINUE SHOPPING</TopButton>
+                <Link to="/product/list/:id"><TopButton>CONTINUE SHOPPING</TopButton></Link>
                 <TopTexts>
                 <TopText>Shopping Bag (4)</TopText>
                 <TopText>Your Wishlist</TopText>
@@ -172,7 +173,7 @@ const Cart = () => {
                             <ProductAmount>3</ProductAmount>
                             <Remove/>
                         </ProductAmountContainer>
-                        <ProductPrice>$ 999</ProductPrice>
+                        <ProductPrice> ₹ 999</ProductPrice>
                      </PriceDetail>
                     </Product>
                     <Hr/>
@@ -192,7 +193,7 @@ const Cart = () => {
                             <ProductAmount>2</ProductAmount>
                             <Remove/>
                         </ProductAmountContainer>
-                        <ProductPrice>$ 2000</ProductPrice>
+                        <ProductPrice>₹ 2000</ProductPrice>
                      </PriceDetail>
                     </Product>
                     </Info>
@@ -200,19 +201,19 @@ const Cart = () => {
                     <SummaryTitle>Order Summary</SummaryTitle>
                     <SummaryItem>
                     <SummaryItemText>SubTotal</SummaryItemText>
-                    <SummaryItemPrice> $ 2900</SummaryItemPrice>
+                    <SummaryItemPrice> ₹ 2900</SummaryItemPrice>
                     </SummaryItem>
                     <SummaryItem>
                     <SummaryItemText>Estimated Shipping</SummaryItemText>
-                    <SummaryItemPrice> $ 10</SummaryItemPrice>
+                    <SummaryItemPrice> ₹ 10</SummaryItemPrice>
                     </SummaryItem>
                     <SummaryItem>
                     <SummaryItemText>Shipping Discount</SummaryItemText>
-                    <SummaryItemPrice> $ -10</SummaryItemPrice>
+                    <SummaryItemPrice> ₹  -10</SummaryItemPrice>
                     </SummaryItem>
                     <SummaryItem type="total">
                     <SummaryItemText>Total</SummaryItemText>
-                    <SummaryItemPrice> $ 2900</SummaryItemPrice>
+                    <SummaryItemPrice> ₹  2900</SummaryItemPrice>
                     </SummaryItem>
                     <Button>CHECKOUT NOW</Button>
                 </Summary>

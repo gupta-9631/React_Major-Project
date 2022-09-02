@@ -17,7 +17,7 @@ font-weight:500;
 const Announcement = () => {
   return (
    <Container>
-    Super Deal! Free Shipping on Prepaid Orders
+    Super Deal! Free Shipping on Orders above ₹ 599
    </Container>
   )
 }

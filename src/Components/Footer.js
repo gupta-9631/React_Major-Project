@@ -5,6 +5,7 @@ import RoomIcon from '@mui/icons-material/Room';
 import PhoneIcon from '@mui/icons-material/Phone';
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
 import { mobile } from '../responsive';
+import { Link } from 'react-router-dom';
 
 import styled from 'styled-components'
 
@@ -62,6 +63,8 @@ const Right= styled.div`
 const ListItem= styled.li`
 width:50%;
 margin-bottom: 10px;
+
+
 `
 const ContactItem= styled.div`
 margin-bottom: 20px;
@@ -100,7 +103,7 @@ const Footer = () => {
             <Title>Useful Links</Title>
             <List>
                 <ListItem>Home</ListItem>
-                <ListItem>Cart</ListItem>
+                <Link to="cart"><ListItem>Cart</ListItem></Link>
                 <ListItem>Men Fashion</ListItem>
                 <ListItem>Woman Fashion</ListItem>
                 <ListItem>Accessories</ListItem>

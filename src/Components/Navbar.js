@@ -1,8 +1,9 @@
 import React from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import styled from 'styled-components'
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import { mobile } from '../responsive';
+import { Link } from 'react-router-dom';
 
 
 const Container = styled.div`
@@ -74,11 +75,12 @@ const Navbar = () => {
     </Left>
     <Center><Logo>Krookly</Logo></Center>
     <Right>
-    <MenuItem>REGISTER</MenuItem>
-    <MenuItem>SIGN IN</MenuItem>
-    <MenuItem>
-    <ShoppingCartOutlinedIcon/>
+    <Link to="product/:id/register"><MenuItem>REGISTER</MenuItem></Link>
+    <Link to="product/:id/login"><MenuItem>SIGN IN</MenuItem></Link>
+    <Link to="cart"><MenuItem>
+    <ShoppingBagOutlinedIcon/>
     </MenuItem>
+    </Link>
     </Right>
    </Wrapper>
    </Container>

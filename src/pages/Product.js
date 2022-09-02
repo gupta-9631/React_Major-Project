@@ -130,7 +130,7 @@ const Product = () => {
                Earring, Drops & Danglers, Clip-on Earring German Silver Chandbali Earring,
                 Clip-on Earring, Drops & Danglers, Jhumki Earring
                 </Desc>
-        <Price>$ 999 </Price>
+        <Price>₹ 999 </Price>
         <FilterContainer>
           <Filter>
             <FilterTitle>Color</FilterTitle>

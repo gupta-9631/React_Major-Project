@@ -4,24 +4,24 @@
 export const sliderItems=[
     {
       id: 1,
-      img: "https://i.ibb.co/1fHJgP8/cheerful-happy-thai-asian-woman-enjoying-shopping.jpg",
-      title: "SUMMER SALE",
-      desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-      bg: "f5fafd",
+      img: "https://i.ibb.co/tLp7mGP/portrait-smiling-young-male-friend-standing-against-yellow-background.jpg",
+      title: "MENS COLLECTION",
+      desc: "Fashion is the armor to survive the reality of everyday life.",
+      bg: "ffc94d",
     },
     {
       id: 2,
-      img: "https://i.ibb.co/DG69bQ4/2.png",
-      title: "AUTUMN COLLECTION",
-      desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-      bg: "fcf1ed",
+      img: "https://i.ibb.co/GRnQ1B5/dark-haired-woman-with-red-lipstick-smiles-leans-stand-with-clothes-holds-package-pink-background.jpg",
+      title: "WOMENS COLLECTION",
+      desc: "Fashion is like eating, you shouldn't stick to the same menu.",
+      bg: "e49da3",
     },
     {
       id: 3,
-      img: "https://i.ibb.co/cXFnLLV/3.png",
-      title: "LOUNGEWEAR LOVE",
-      desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-      bg: "fbf0f4",
+      img: "https://i.ibb.co/dcSZ9Nm/beautiful-smiling-young-blonde-woman-pointing-sunglasses-holding-shopping-bags-credit-card-pink-wall.jpg",
+      title: "UNBELIEVABLE DEALS",
+      desc: "Get extra upto 60% off on new arrivals.",
+      bg: "8541a1",
     },
   ];
 
@@ -48,34 +48,62 @@ export const categories = [
   export const popularProducts = [
     {
       id:1,
-      img:"https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
+      img:"https://i.ibb.co/nzB5dNt/p15.jpg",
     },
     {
       id:2,
-      img:"https://cdn.shopify.com/s/files/1/0101/4832/products/Angela_Natural_Tee.png?v=1606780388",
+      img:"https://i.ibb.co/g4q2v0R/p14.jpg",
     },
     {
       id:3,
-      img:"https://www.prada.com/content/dam/pradanux_products/U/UCS/UCS319/1YOTF010O/UCS319_1YOT_F010O_S_182_SLF.png",
+      img:"https://i.ibb.co/tH7h1p3/p13.jpg",
     },
     {
       id:4,
-      img:"https://www.burdastyle.com/pub/media/catalog/product/cache/7bd3727382ce0a860b68816435d76e26/107/BUS-PAT-BURTE-1320516/1170x1470_BS_2016_05_132_front.png",
+      img:"https://i.ibb.co/gTrHddP/product1.jpg",
     },
     {
       id:5,
-      img:"https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png",
+      img:"https://i.ibb.co/C7LKVr0/p12.jpg",
     },
     {
       id:6,
-      img:"https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
+      img:"https://i.ibb.co/CQzhrPw/p11.jpg",
     },
     {
       id:7,
-      img:"https://www.vintageindustries.nl/download_front/qympzk1762/2217_Arrow_Jacket_Forest.png",
+      img:"https://i.ibb.co/VTcsRTY/p10.jpg",
     },
     {
       id:8,
-      img:"https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png",
+      img:"https://i.ibb.co/QQd8FgX/p9.jpg",
+    },  
+    {
+      id:9,
+      img:"https://i.ibb.co/TtsXKJw/p8.jpg",
+    },
+      {
+      id:10,
+      img:"https://i.ibb.co/HKJB1ft/p7.jpg",
+    },
+      {
+      id:11,
+      img:"https://i.ibb.co/2yRFsJs/p6.jpg",
+    },
+      {
+      id:12,
+      img:"https://i.ibb.co/BVQDdBz/p5.jpg",
+    },
+      {
+      id:13,
+      img:"https://i.ibb.co/jg4gyzQ/p4.jpg",
+    },
+      {
+      id:14,
+      img:"https://i.ibb.co/vczQq9z/product3.jpg",
+    },
+      {
+      id:15,
+      img:"https://i.ibb.co/b2Q3hDG/product2.jpg",
     },
   ]
