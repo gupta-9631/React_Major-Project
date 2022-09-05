@@ -79,13 +79,13 @@ const Footer = () => {
 
     <Container>
         <Left>
-            <Logo>Krookly</Logo>
+            <Logo>DealShare</Logo>
             <Description>
            Online shopping is a form of electronic
-            commerce which allows consumers to
+           commerce which allows consumers to
            directly buy goods or services from a
            seller over the Internet using
-           a web browser or a mobile app. Consumers find 
+           a web browser or a mobile app.
             </Description>
             <SocialContainer>
                 <SocialIcon color="3B5999" >
@@ -122,7 +122,7 @@ const Footer = () => {
             <PhoneIcon style={{marginRight: "10px"}}/>1800334455
             </ContactItem>
             <ContactItem>
-            <MailOutlinedIcon style={{marginRight: "10px"}}/>contact@krookly.com
+            <MailOutlinedIcon style={{marginRight: "10px"}}/>contact@dealshare.com
             </ContactItem>
             <Payment src="https://i.ibb.co/Qfvn4z6/payment.png"/>
         </Right>  

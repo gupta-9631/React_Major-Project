@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import signUpValidation from '../signUpValidation'
 const Container= styled.div`
 width: 100vw;
 height: 100vh;
@@ -54,18 +55,53 @@ const ButtonWrapper= styled.div`
   justify-content: center;
 `
 
+
 const Register = () => {
+
+  const [values, setValues]  = useState({
+            firstname: '',
+            lastname: '',
+            username: '',
+            email: '',
+            password: '',
+            confirmpassword: '',
+
+          })
+
+const[dataIsCorrect, setDataIsCorrect] = useState(false);
+
+const handleChange = (event) => {
+  setValues({
+    ...values,
+    [event.target.name]:event.target.value,
+  })
+}
+
+const [errors, setErrors]= useState({});
+
+const handleSubmit=(e)=>{
+    e.preventDefault()
+    setErrors(signUpValidation(values));
+    setDataIsCorrect(true);
+}
+
   return (
     <Container>
       <Wrapper>
          <Title>CREATE AN ACCOUNT</Title>
-        <Form>
-        <Input placeholder="name"/>
-        <Input placeholder="last name"/>
-        <Input placeholder=" username"/>
-        <Input placeholder="email"/>
-       <Input placeholder="password"/>
-       <Input placeholder="confirm password"/>
+        <Form onSubmit={handleSubmit}>
+        <Input placeholder="First Name" type="text" name='firstname' value={values.firstname} onChange={handleChange}/>
+        {errors.firstname && <p>{errors.firstname}</p>}
+        <Input placeholder="Last Name" type="text" name='lastname' value={values.lastname} onChange={handleChange}/>
+        {errors.lastname && <p>{errors.lastname}</p>}
+        <Input placeholder="Username" type="text" name='username' value={values.username} onChange={handleChange}/>
+        {errors.username && <p>{errors.username}</p>}
+        <Input placeholder="Email" type="email" name='email' value={values.email} onChange={handleChange}/>
+        {errors.email && <p>{errors.email}</p>}
+       <Input placeholder="Password" type="password" name='password' value={values.password} onChange={handleChange}/>
+       {errors.password && <p>{errors.password}</p>}
+       <Input placeholder="Confirm Password" type="password" name='confirmpassword' value={values.confirmpassword} onChange={handleChange}/> 
+       {errors.confirmpassword && <p>{errors.confirmpassword}</p>}  
        <Agreement>By creating an account , I consent to processing my personal
         data with the <b>PRIVACY POLICY</b> </Agreement>
         <ButtonWrapper>

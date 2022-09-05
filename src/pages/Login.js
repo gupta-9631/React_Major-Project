@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { mobile } from '../responsive';
 
 
+
 const Container= styled.div`
 width: 100vw;
 height: 100vh;
@@ -51,7 +52,7 @@ margin-bottom:10px;
 
 `
 
-const Link= styled.a`
+const Links= styled.a`
 margin:5px 0px;
 font-size:12px;
 font-weight:300;
@@ -86,8 +87,8 @@ const Login = () => {
         <Button>Login</Button>
         </ButtonWrapper>
         <LinkWrapper>
-        <Link>DO NOT REMEMBER THE PASSWORD</Link>
-         <Link>CEATE A NEW ACCOUNT</Link>
+        <Links>DO NOT REMEMBER THE PASSWORD</Links>
+        <Links>CEATE A NEW ACCOUNT</Links>
          </LinkWrapper>
        </Form>
         </Wrapper>  

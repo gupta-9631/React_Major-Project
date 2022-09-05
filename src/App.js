@@ -5,12 +5,13 @@ import Product from './pages/Product';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Cart from './pages/Cart';
+import SignUpSuccess from './pages/SignUpSuccess';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      {/* <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/product/list/:id" element={<ProductList/>} />
@@ -19,7 +20,9 @@ function App() {
         <Route path="/product/:id/login" element={<Login/>} />
         <Route path="/cart" element={<Cart/>} /> 
       </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+
+<SignUpSuccess></SignUpSuccess>
       
     </div>
  

@@ -73,7 +73,7 @@ const Navbar = () => {
         <SearchIcon style={{color: 'gray', fontSize: 16}}/>
     </SearchContainer>
     </Left>
-    <Center><Logo>Krookly</Logo></Center>
+    <Center><Logo>DealShare</Logo></Center>
     <Right>
     <Link to="product/:id/register"><MenuItem>REGISTER</MenuItem></Link>
     <Link to="product/:id/login"><MenuItem>SIGN IN</MenuItem></Link>

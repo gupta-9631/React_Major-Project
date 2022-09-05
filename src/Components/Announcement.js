@@ -17,7 +17,7 @@ font-weight:500;
 const Announcement = () => {
   return (
    <Container>
-    Super Deal! Free Shipping on Orders above ₹ 599
+    Super Deal ! Free Shipping on Orders Above ₹ 599
    </Container>
   )
 }
