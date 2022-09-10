@@ -65,26 +65,34 @@ ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 
 const Navbar = () => {
   return (
-   <Container>
-   <Wrapper>
-    <Left><Languages>EN</Languages>
-    <SearchContainer>
-        <Input placeholder='Search'/>
-        <SearchIcon style={{color: 'gray', fontSize: 16}}/>
-    </SearchContainer>
-    </Left>
-    <Center><Logo>DealShare</Logo></Center>
-    <Right>
-    <Link to="product/:id/register"><MenuItem>REGISTER</MenuItem></Link>
-    <Link to="product/:id/login"><MenuItem>SIGN IN</MenuItem></Link>
-    <Link to="cart"><MenuItem>
-    <ShoppingBagOutlinedIcon/>
-    </MenuItem>
-    </Link>
-    </Right>
-   </Wrapper>
-   </Container>
-  )
-}
+    <Container>
+      <Wrapper>
+        <Left>
+          <Languages>EN</Languages>
+          <SearchContainer>
+            <Input placeholder="Search" />
+            <SearchIcon style={{ color: "gray", fontSize: 16 }} />
+          </SearchContainer>
+        </Left>
+        <Center>
+          <Logo>DealShare</Logo>
+        </Center>
+        <Right>
+          <Link to="product/:id/register">
+            <MenuItem>REGISTER</MenuItem>
+          </Link>
+          <Link to="product/:id/login">
+            <MenuItem>SIGN IN</MenuItem>
+          </Link>
+          <Link to="/cart">
+            <MenuItem>
+              <ShoppingBagOutlinedIcon />
+            </MenuItem>
+          </Link>
+        </Right>
+      </Wrapper>
+    </Container>
+  );
+};
 
 export default Navbar;

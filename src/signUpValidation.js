@@ -10,9 +10,6 @@ export default function signUpValidation(values) {
       if(!values.lastname){
         errors.lastname = "Last name is required";
       }
-      if(!values.username){
-        errors.username = "Username is required";
-      }
       if(!values.email){
         errors.email = "Email is required";
       }
