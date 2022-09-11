@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import React from "react";
+import { CartState } from "../Context/Context";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
@@ -81,7 +82,13 @@ const AddTocart = styled.button`
   cursor: pointer;
 `;
 
-const Product = ({ item, handleClick }) => {
+const Product = ({ item }) => {
+  const {
+    state: { cart },
+    dispatch,
+  } = CartState();
+
+  console.log(cart);
   const { title, img, price } = item;
   return (
     <Container>
@@ -95,7 +102,16 @@ const Product = ({ item, handleClick }) => {
       <CartInfo>
         <Title>{title}</Title>
         <Price>₹ {price}</Price>
-        <AddTocart onClick={() => handleClick(item)}>Add to Cart</AddTocart>
+        <AddTocart
+          onClick={() => {
+            dispatch({
+              type: "ADD_TO_CART",
+              payload: item,
+            });
+          }}
+        >
+          Add to Cart
+        </AddTocart>
       </CartInfo>
     </Container>
   );

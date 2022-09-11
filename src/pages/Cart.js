@@ -51,12 +51,14 @@ const Bottom = styled.div`
 const Info = styled.div`
   flex: 3;
   display: flex;
-  flex-flow: row;
+  // flex-flow: row;
 `;
 
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-flow: column;
+
   ${mobile({ flexDirection: "column" })}
 `;
 const ProductDetail = styled.div`
@@ -64,7 +66,8 @@ const ProductDetail = styled.div`
   display: flex;
 `;
 const Image = styled.img`
-  width: 200px;
+  width: 150px;
+  height: 150px;
 `;
 const Details = styled.div`
   padding: 20px;
@@ -141,27 +144,7 @@ const Button = styled.button`
   color: white;
   font-weight: 600;
 `;
-const Cart = ({ cart, setCart, handleChange }) => {
-  const [price, setPrice] = useState(0);
-
-  const handleRemove = (id) => {
-    const arr = cart.filter((item) => item.id !== id);
-    setCart(arr);
-    handleprice();
-  };
-
-  const handleprice = () => {
-    let ans = 0;
-    cart.map((item) => (ans += item.amount * item.price));
-    setPrice(ans);
-  };
-
-  useEffect(() => {
-    handleprice();
-  });
-
-  console.log(cart);
-
+const Cart = () => {
   return (
     <Container>
       {/* <Navbar /> */}

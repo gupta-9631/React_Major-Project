@@ -1,18 +1,23 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { popularProducts } from "../data";
+// import { popularProducts } from "../data";
 import Product from "./Product";
+import { CartState } from "../Context/Context";
+
+
 
 const Container = styled.div`
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
 `;
-const Products = ({ handleClick }) => {
+const Products = ({item}) => {
+
+const {state: {products}}= CartState();
   return (
     <Container>
-      {popularProducts.map((item) => {
-        return <Product key={item.id} item={item} handleClick={handleClick} />;
+      {products.map((item) => {
+        return <Product key={item.id} item={item} />;
       })}
     </Container>
   );
