@@ -5,6 +5,7 @@ import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import { mobile } from '../responsive';
 import { Link } from 'react-router-dom';
 import { CartState } from "../Context/Context";
+import { Badge } from "@mui/material";
 
 const Container = styled.div`
   height: 60px;
@@ -63,6 +64,7 @@ const MenuItem = styled.div`
 const Navbar = () => {
   const {
     state: { cart },
+    productDispatch,
   } = CartState();
 
   return (
@@ -71,7 +73,15 @@ const Navbar = () => {
         <Left>
           <Languages>EN</Languages>
           <SearchContainer>
-            <Input placeholder="Search" />
+            <Input
+              placeholder="Search"
+              onChange={(e) => {
+                productDispatch({
+                  type: "FILTER_BY_SEARCH",
+                  payload: e.target.value,
+                });
+              }}
+            />
             <SearchIcon style={{ color: "gray", fontSize: 16 }} />
           </SearchContainer>
         </Left>
@@ -87,8 +97,9 @@ const Navbar = () => {
           </Link>
           <Link to="/cart">
             <MenuItem>
-              <ShoppingBagOutlinedIcon />
-              <span> {cart.length}</span>
+              <Badge badgeContent={cart.length} color="primary">
+                <ShoppingBagOutlinedIcon />
+              </Badge>
             </MenuItem>
           </Link>
         </Right>

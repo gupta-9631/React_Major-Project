@@ -52,7 +52,7 @@ export const categories = [
       title: "Ladies Top",
       desc: "",
       price: "999",
-      amount: "5",
+      amount: "1",
     },
     {
       id: 2,
@@ -60,7 +60,7 @@ export const categories = [
       title: "Frock suit",
       desc: "",
       price: "599",
-      amount: "5",
+      amount: "1",
     },
     {
       id: 3,
@@ -68,7 +68,7 @@ export const categories = [
       title: "Jeans",
       desc: "",
       price: "699",
-      amount: "5",
+      amount: "1",
     },
     {
       id: 4,
@@ -76,7 +76,7 @@ export const categories = [
       title: "Shirt",
       desc: "",
       price: "599",
-      amount: "5",
+      amount: "1",
     },
     {
       id: 5,
@@ -84,7 +84,7 @@ export const categories = [
       title: "American Tourister bag",
       desc: "",
       price: "1099",
-      amount: "5",
+      amount: "1",
     },
     {
       id: 6,
@@ -92,7 +92,7 @@ export const categories = [
       title: "Trolley bag",
       desc: "",
       price: "1699",
-      amount: "5",
+      amount: "1",
     },
     {
       id: 7,
@@ -100,7 +100,7 @@ export const categories = [
       title: "Levi's Tshirt",
       desc: "",
       price: "1299",
-      amount: "5",
+      amount: "1",
     },
     {
       id: 8,
@@ -108,7 +108,7 @@ export const categories = [
       title: "adidas Tshirt",
       desc: "",
       price: "899",
-      amount: "5",
+      amount: "1",
     },
     {
       id: 9,
@@ -116,7 +116,7 @@ export const categories = [
       title: "Smart watch",
       desc: "",
       price: "1199",
-      amount: "5",
+      amount: "1",
     },
     {
       id: 10,
@@ -124,7 +124,7 @@ export const categories = [
       title: "Apple watch",
       desc: "",
       price: "1499",
-      amount: "5",
+      amount: "1",
     },
     {
       id: 11,
@@ -132,7 +132,7 @@ export const categories = [
       title: "Jeans",
       desc: "",
       price: "399",
-      amount: "5",
+      amount: "1",
     },
     {
       id: 12,
@@ -140,7 +140,7 @@ export const categories = [
       title: "Sports sheos",
       desc: "",
       price: "299",
-      amount: "5",
+      amount: "1",
     },
     {
       id: 13,
@@ -148,7 +148,7 @@ export const categories = [
       title: "Denim shirt",
       desc: "",
       price: "699",
-      amount: "5",
+      amount: "1",
     },
     {
       id: 14,
@@ -156,7 +156,7 @@ export const categories = [
       title: "Cotton shirt",
       desc: "",
       price: "599",
-      amount: "5",
+      amount: "1",
     },
     {
       id: 15,
@@ -164,6 +164,6 @@ export const categories = [
       title: "Ladies top",
       desc: "",
       price: "2099",
-      amount: "5",
+      amount: "1",
     },
   ];

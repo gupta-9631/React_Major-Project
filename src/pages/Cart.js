@@ -6,10 +6,10 @@ import Footer from "../Components/Footer";
 import { Add, Remove } from "@mui/icons-material";
 import { mobile } from "../responsive";
 import { Link } from "react-router-dom";
+import { CartState } from "../Context/Context";
+import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 
-const Container = styled.div`
-  display: flex;
-`;
+const Container = styled.div``;
 const Wrapper = styled.div`
   padding: 20px;
   ${mobile({ padding: "10px" })}
@@ -50,16 +50,21 @@ const Bottom = styled.div`
 `;
 const Info = styled.div`
   flex: 3;
-  display: flex;
-  // flex-flow: row;
+  margin-right: 10px;
 `;
 
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
-  flex-flow: column;
+  align-items: center;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-bottom: 5px;
 
-  ${mobile({ flexDirection: "column" })}
+  ${mobile({
+    flexDirection: "column",
+    marginBottom: "5px",
+  })}
 `;
 const ProductDetail = styled.div`
   flex: 2;
@@ -108,11 +113,6 @@ const ProductPrice = styled.div`
   font-weight: 200;
   ${mobile({ marginBottom: "20px" })}
 `;
-const Hr = styled.hr`
-  background-color: #eee;
-  border: none;
-  height: 1px;
-`;
 
 const Summary = styled.div`
   flex: 1;
@@ -144,82 +144,142 @@ const Button = styled.button`
   color: white;
   font-weight: 600;
 `;
+
+const Removes = styled.div`
+  width: 20px;
+  height: 10px;
+`;
+
+const CartEmpty = styled.h1`
+  border: 1px solid black;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  background-color: palegreen;
+`;
+
+const Empty = styled.div``;
+
+const Continue = styled.p`
+  text-align: center;
+`;
+
 const Cart = () => {
+  const {
+    state: { cart },
+    dispatch,
+  } = CartState();
+
+  const [total, setTotal] = useState();
+
+  useEffect(() => {
+    setTotal(
+      cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
+    );
+  }, [cart]);
+
   return (
     <Container>
-      {/* <Navbar /> */}
+      <Navbar />
       <Announcement />
-      <Wrapper>
-        <Title>YOUR BAG</Title>
-        <Top>
-          <Link to="/product/list/:id">
-            <TopButton>CONTINUE SHOPPING</TopButton>
-          </Link>
-          <TopTexts>
-            <TopText>Shopping Bag (4)</TopText>
-            <TopText>Your Wishlist</TopText>
-          </TopTexts>
-          <TopButton type="filled">CHECKOUT NOW</TopButton>
-        </Top>
-        <Bottom>
-          {cart.map((item) => (
+      {cart.length > 0 ? (
+        <Wrapper>
+          <Title>YOUR BAG</Title>
+          <Top>
+            <Link to="/">
+              <TopButton>CONTINUE SHOPPING</TopButton>
+            </Link>
+            <TopTexts>
+              <TopText>Shopping Bag {cart.length}</TopText>
+              <TopText>Your Wishlist</TopText>
+            </TopTexts>
+            <TopButton type="filled">CHECKOUT NOW</TopButton>
+          </Top>
+          <Bottom>
             <Info>
-              <Product>
-                <ProductDetail>
-                  <Image src={item.img} alt="" />
-                  <Details>
-                    <ProductName>
-                      <b>Product: </b>Cotton Shirt
-                    </ProductName>
-                    <ProductId>
-                      <b>ID: </b>
-                      {item.id}
-                    </ProductId>
-                    <ProductColor color="black" />
-                    <ProductSize>
-                      <b>Size: </b>42
-                    </ProductSize>
-                  </Details>
-                </ProductDetail>
-                <PriceDetail>
-                  <ProductAmountContainer>
-                    <button onClick={() => handleChange(item, 1)}>
-                      <Add />
-                    </button>
-                    <ProductAmount>{item.amount}</ProductAmount>
-                    <button onClick={(item, -1)}>
-                      <Remove />
-                    </button>
-                  </ProductAmountContainer>
-                  <ProductPrice> ₹ {item.price}</ProductPrice>
-                </PriceDetail>
-              </Product>
-              <Hr />
+              {cart.map((item) => (
+                <Product>
+                  <ProductDetail>
+                    <Image src={item.img} alt="" />
+                    <Details>
+                      <ProductName>
+                        <b>Product: </b>
+                        {item.title}
+                      </ProductName>
+                      <ProductId>
+                        <b>ID: </b>
+                        {item.id}
+                      </ProductId>
+                      <ProductColor color="black" />
+                      <ProductSize>
+                        <b>Size: </b>42
+                      </ProductSize>
+                    </Details>
+                  </ProductDetail>
+                  <PriceDetail>
+                    <ProductAmountContainer>
+                      <select
+                        onChange={(e) =>
+                          dispatch({
+                            type: "CHANGE_CART_QTY",
+                            payload: {
+                              id: item.id,
+                              qty: e.target.value,
+                            },
+                          })
+                        }
+                      >
+                        <option value="1" selected>
+                          Qty 1
+                        </option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </ProductAmountContainer>
+                    <ProductPrice> ₹ {item.price}</ProductPrice>
+                  </PriceDetail>
+                  <Removes
+                    onClick={() =>
+                      dispatch({ type: "REMOVE_FROM_CART", payload: item })
+                    }
+                  >
+                    <DeleteOutlineOutlinedIcon />
+                  </Removes>
+                </Product>
+              ))}
             </Info>
-          ))}
 
-          <Summary>
-            <SummaryTitle>Order Summary</SummaryTitle>
-            <SummaryItem>
-              <SummaryItemText>SubTotal</SummaryItemText>
-              <SummaryItemPrice> ₹ 2900</SummaryItemPrice>
-            </SummaryItem>
-            <SummaryItem>
-              <SummaryItemText>Estimated Shipping</SummaryItemText>
-              <SummaryItemPrice> ₹ 10</SummaryItemPrice>
-            </SummaryItem>
-            <SummaryItem>
-              <SummaryItemText>Shipping Discount</SummaryItemText>
-              <SummaryItemPrice> ₹ -10</SummaryItemPrice>
-            </SummaryItem>
-            <SummaryItem type="total">
-              <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice> ₹ 2900</SummaryItemPrice>
-            </SummaryItem>
-            <Button>CHECKOUT NOW</Button>
-          </Summary>
-        </Bottom>
-      </Wrapper>
+            <Summary>
+              <SummaryTitle>Order Summary</SummaryTitle>
+              <SummaryItem>
+                <SummaryItemText>SubTotal</SummaryItemText>
+                <SummaryItemPrice> ₹ {total}</SummaryItemPrice>
+              </SummaryItem>
+              <SummaryItem>
+                <SummaryItemText>Estimated Shipping</SummaryItemText>
+                <SummaryItemPrice> Free </SummaryItemPrice>
+              </SummaryItem>
+              <SummaryItem></SummaryItem>
+              <SummaryItem type="total">
+                <SummaryItemText>Total</SummaryItemText>
+                <SummaryItemPrice> ₹ {total}</SummaryItemPrice>
+              </SummaryItem>
+              <Button>CHECKOUT NOW</Button>
+            </Summary>
+          </Bottom>
+        </Wrapper>
+      ) : (
+        <Empty>
+          <CartEmpty>Your Cart is empty.</CartEmpty>
+          <Link to="/">
+            <Continue>Continue Shopping</Continue>
+          </Link>
+        </Empty>
+      )}
+
       <Footer />
     </Container>
   );
