@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import React from "react";
 import { CartState } from "../Context/Context";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   flex: 1;
@@ -34,6 +35,15 @@ const AddTocart = styled.button`
   cursor: pointer;
 `;
 
+const GotoCart = styled.button`
+  padding: 5px;
+  background-color: green;
+  border-radius: 3px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+`;
+
 const Product = ({ item }) => {
   const {
     state: { cart },
@@ -42,21 +52,26 @@ const Product = ({ item }) => {
   const { title, img, price } = item;
   return (
     <Container>
-      <div />
       <Image src={img} alt="" />
       <CartInfo>
         <Title>{title}</Title>
         <Price>₹ {price}</Price>
-        <AddTocart
-          onClick={() => {
-            dispatch({
-              type: "ADD_TO_CART",
-              payload: item,
-            });
-          }}
-        >
-          Add to Cart
-        </AddTocart>
+        {cart.some((p) => p.id === item.id) ? (
+          <Link to="/cart">
+            <GotoCart>GO TO CART</GotoCart>
+          </Link>
+        ) : (
+          <AddTocart
+            onClick={() => {
+              dispatch({
+                type: "ADD_TO_CART",
+                payload: item,
+              });
+            }}
+          >
+            ADD TO CART
+          </AddTocart>
+        )}
       </CartInfo>
     </Container>
   );

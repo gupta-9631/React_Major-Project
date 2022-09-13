@@ -11,23 +11,11 @@ const Container = styled.div`
 const Products = () => {
   const {
     state: { products },
-    productState: { searchQuery },
   } = CartState();
-
-  const transformProducts = () => {
-    let sortedProducts = products;
-
-    if (searchQuery) {
-      sortedProducts = sortedProducts.filter((item) =>
-        item.name.toLowerCase().includes(searchQuery)
-      );
-    }
-    return sortedProducts;
-  };
 
   return (
     <Container>
-      {transformProducts().map((item) => {
+      {products.map((item) => {
         return <Product key={item.id} item={item} />;
       })}
     </Container>

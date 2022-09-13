@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Navbar from "../Components/Navbar";
 import Announcement from "../Components/Announcement";
 import Footer from "../Components/Footer";
-import { Add, Remove } from "@mui/icons-material";
 import { mobile } from "../responsive";
 import { Link } from "react-router-dom";
 import { CartState } from "../Context/Context";
@@ -219,25 +218,27 @@ const Cart = () => {
                   </ProductDetail>
                   <PriceDetail>
                     <ProductAmountContainer>
-                      <select
-                        onChange={(e) =>
-                          dispatch({
-                            type: "CHANGE_CART_QTY",
-                            payload: {
-                              id: item.id,
-                              qty: e.target.value,
-                            },
-                          })
-                        }
-                      >
-                        <option value="1" selected>
-                          Qty 1
-                        </option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                      </select>
+                      <ProductAmount>
+                        <select
+                          onChange={(e) =>
+                            dispatch({
+                              type: "CHANGE_CART_QTY",
+                              payload: {
+                                id: item.id,
+                                qty: e.target.value,
+                              },
+                            })
+                          }
+                        >
+                          <option value="1" selected>
+                            Qty 1
+                          </option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select>
+                      </ProductAmount>
                     </ProductAmountContainer>
                     <ProductPrice> ₹ {item.price}</ProductPrice>
                   </PriceDetail>
@@ -267,7 +268,9 @@ const Cart = () => {
                 <SummaryItemText>Total</SummaryItemText>
                 <SummaryItemPrice> ₹ {total}</SummaryItemPrice>
               </SummaryItem>
-              <Button>CHECKOUT NOW</Button>
+              <Link to="/ThanksPage">
+                <Button onClick={() => (cart.length = 0)}>CHECKOUT NOW</Button>
+              </Link>
             </Summary>
           </Bottom>
         </Wrapper>

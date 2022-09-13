@@ -64,7 +64,6 @@ const MenuItem = styled.div`
 const Navbar = () => {
   const {
     state: { cart },
-    productDispatch,
   } = CartState();
 
   return (
@@ -73,15 +72,7 @@ const Navbar = () => {
         <Left>
           <Languages>EN</Languages>
           <SearchContainer>
-            <Input
-              placeholder="Search"
-              onChange={(e) => {
-                productDispatch({
-                  type: "FILTER_BY_SEARCH",
-                  payload: e.target.value,
-                });
-              }}
-            />
+            <Input />
             <SearchIcon style={{ color: "gray", fontSize: 16 }} />
           </SearchContainer>
         </Left>
